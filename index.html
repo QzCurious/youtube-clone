@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone</title>
+  <link rel="icon" href="./assets/images/favicon.png" type="image/png" sizes="45x64">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./src/scss/main.scss" type="text/css">
+</head>
+
+<body>
+  <div class="home-grid">
+    <header class="navbar">
+      <i class="navbar__menu_toggle material-icons">menu</i>
+      <img class="nav__logo logo" src="./assets/images/logo.png" alt="logo" />
+      <form class="navbar__search search">
+        <input class="search__input" type="text" name="search" placeholder="Search">
+        <button class="search__btn material-icons" type="submit">search<span class="sr-only">Search it</span></button>
+      </form>
+      <div class="navbar__tooltray">
+        <a class="navbar__icon material-icons" title="create">video_call</a>
+        <a class="navbar__icon material-icons" title="YouTube apps">apps</a>
+        <a class="navbar__icon material-icons" title="notifications">notifications</a>
+        <a title="user profile"><img class="navbar__user" src="https://picsum.photos/52" /></a>
+      </div>
+    </header>
+    <nav class="menu">
+      <section class="menu__block">
+        <a href="#" class="menu__item menu__link menu__link--active"><i class="menu__img material-icons">home</i>Home</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">local_fire_department</i>Trending</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">subscriptions</i>Subscription</a>
+      </section>
+      <section class="menu__block">
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">video_library</i>Library</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">history</i>History</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">slideshow</i>Your videos</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">watch_later</i>Watch later</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">playlist_play</i>My List</a>
+        <button type="button" class="menu__item"><i class="menu__img material-icons">expand_more</i>Show more</button>
+      </section>
+      <section class="menu__block">
+        <h3 class="menu__header">SUBSCRIPTIONS</h3>
+        <a href="#" class="menu__item menu__link"><img class="menu__img avatar avatar--rounded avatar--sm" src="https://picsum.photos/51" alt="">Laravel Business</a>
+        <a href="#" class="menu__item menu__link"><img class="menu__img avatar avatar--rounded avatar--sm" src="https://picsum.photos/49" alt="">Flux</a>
+      </section>
+      <section class="menu__block">
+        <h3 class="menu__header">More From YouTube</h3>
+        <a href="#" class="menu__item menu__link"><i class="menu__img fab fa-youtube"></i>YouTube Premium</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">gamepad</i>Gaming</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">wifi_tethering</i>Live</a>
+      </section>
+      <section class="menu__block">
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">settings</i>Settings</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">flag</i>Report history</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">help</i>Help</a>
+        <a href="#" class="menu__item menu__link"><i class="menu__img material-icons">feedback</i>Send feedback</a>
+      </section>
+    </nav>
+    <section class="keywords">
+      <a href="#" class="keywords__text keywords__text--active">All</a>
+      <a href="#" class="keywords__text">Laravel</a>
+      <a href="#" class="keywords__text">Vue</a>
+    </section>
+    <main class="main">
+      <section class="main__sec">
+        <article class="video">
+          <a href="#" class="video__thumbnail"><img src="https://picsum.photos/360/200" /></a>
+          <div class="video__info">
+            <a href="#" class="video__avatar"><img class="avatar avatar--rounded" src="https://picsum.photos/50" alt="Channel Name" /></a>
+            <div>
+              <h3 class="video__title">Lorem ipsum dolor sit Lorem ipsum dolor sit amet,</h3>
+              <a href="#" class="video__channel">Channel Name</a>
+              <div class="video__misc">
+                <span class="video__views views views--dotend">14K views</span>
+                <span class="video__time time">2 months ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="main_sec">
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

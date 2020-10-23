@@ -1,0 +1,49 @@
+@use '../core/components/icon';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: .7em;
+    color: #030303;
+}
+
+.nav__logo {
+    margin-right: auto;
+}
+
+.navbar__search {
+    flex: auto;
+    max-width: 40em;
+    margin-right: 3.4em;
+    margin-left: 2.8em;
+}
+
+.navbar__menu_toggle {
+    width: 1.6rem;
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navbar__icon {
+    width: 1.6rem;
+    margin-left: .8em;
+    color: #606060;
+    font-size: 1.6em;
+    cursor: pointer;
+}
+
+.navbar__user {
+    @extend .icon;
+    @extend .icon--rounded;
+
+    width: 1.85em;
+    margin: 0 1.4em 0 2em;
+}
+
+.navbar__tooltray {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}

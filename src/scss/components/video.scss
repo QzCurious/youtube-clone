@@ -1,0 +1,47 @@
+.video {
+    width: 22.5rem;
+    height: 20rem;
+    margin-bottom: 1.8em;
+}
+
+.video__thumbnail {
+    display: block;
+    margin-bottom: .46em;
+}
+
+.video__info {
+    display: flex;
+}
+
+.video__avatar {
+    margin-right: .8em;
+}
+
+.video__title {
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.video__channel {
+    display: inline-block;
+    color: rgba(0, 0, 0, .75);
+    font-size: .875em;
+}
+
+.video__views {
+    display: inline-block;
+    color: rgba(0, 0, 0, .75);
+    font-size: .875em;
+}
+
+.video__views::after {
+    content: "•";
+    margin-left: .5ch;
+}
+
+.video__time {
+    display: inline-block;
+    color: rgba(0, 0, 0, .75);
+    font-size: .875em;
+}
