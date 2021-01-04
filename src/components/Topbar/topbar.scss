@@ -1,6 +1,6 @@
-@use '../core/components/icon';
+@use "../../scss/components/icon.scss";
 
-.navbar {
+.topbar {
     display: flex;
     align-items: center;
     padding: .7em;
@@ -11,14 +11,7 @@
     margin-right: auto;
 }
 
-.navbar__search {
-    flex: auto;
-    max-width: 40em;
-    margin-right: 3.4em;
-    margin-left: 2.8em;
-}
-
-.navbar__menu_toggle {
+.topbar__menu_toggle {
     width: 1.6rem;
     margin: 0 1rem;
     font-size: 1.6rem;
@@ -26,7 +19,7 @@
     cursor: pointer;
 }
 
-.navbar__icon {
+.topbar__icon {
     width: 1.6rem;
     margin-left: .8em;
     color: #606060;
@@ -34,15 +27,23 @@
     cursor: pointer;
 }
 
-.navbar__user {
+.topbar__search {
+    flex: auto;
+    max-width: 40em;
+    margin-right: 3.4em;
+    margin-left: 2.8em;
+}
+
+.topbar__user {
     @extend .icon;
     @extend .icon--rounded;
 
     width: 1.85em;
     margin: 0 1.4em 0 2em;
+    cursor: pointer;
 }
 
-.navbar__tooltray {
+.topbar__tooltray {
     display: flex;
     align-items: center;
     margin-left: auto;

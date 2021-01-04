@@ -1,46 +1,44 @@
-.video {
-    width: 22.5rem;
-    height: 20rem;
-    margin-bottom: 1.8em;
+.video-card {
 }
 
-.video__thumbnail {
+.video-card__thumbnail {
     display: block;
+    width: 100%;
     margin-bottom: .46em;
 }
 
-.video__info {
+.video-card__info {
     display: flex;
 }
 
-.video__avatar {
+.video-card__avatar {
     margin-right: .8em;
 }
 
-.video__title {
+.video-card__title {
     font-size: inherit;
     font-weight: 500;
     line-height: 1.4;
 }
 
-.video__channel {
+.video-card__channel {
     display: inline-block;
     color: rgba(0, 0, 0, .75);
     font-size: .875em;
 }
 
-.video__views {
+.video-card__views {
     display: inline-block;
     color: rgba(0, 0, 0, .75);
     font-size: .875em;
 }
 
-.video__views::after {
+.video-card__views::after {
     content: "•";
-    margin-left: .5ch;
+    margin: 0 .5ch;
 }
 
-.video__time {
+.video-card__publish-time {
     display: inline-block;
     color: rgba(0, 0, 0, .75);
     font-size: .875em;

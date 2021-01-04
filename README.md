@@ -2,8 +2,8 @@
 
 [youtube icon](https://www.youtube.com/about/brand-resources/#logos-icons-colors)
 
-[PARCEL](https://parceljs.org/getting_started.html)
+for sass, install `sass`
 
 ```sh
-npm run dev
+npm start
 ```

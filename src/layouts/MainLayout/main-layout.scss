@@ -1,0 +1,43 @@
+.main-layout {
+    display: grid;
+    position: sticky;
+    grid-template-areas:
+        "topbar topbar"
+        "menu keywords"
+        "menu main";
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: auto auto 1fr;
+    height: 100vh;
+}
+
+.main-layout__topbar {
+    grid-area: topbar;
+    align-items: center;
+    background-color: #fff;
+}
+
+.main-layout__menu {
+    position: relative;
+    grid-area: menu;
+    overflow: hidden;
+
+    &:hover {
+        overflow-y: auto;
+    }
+}
+
+.main-layout__keywords {
+    grid-area: keywords;
+    overflow-x: hidden;
+}
+
+.main-layout__main {
+    grid-area: main;
+    padding: 1.4em;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+
+    &__sec {
+        border-bottom: 4px solid rgba(0, 0, 0, .1);
+    }
+}
