@@ -1,21 +1,3 @@
 @use './scss/variables.scss';
-@use './scss//reset';
-@use './scss//utils';
-
-.logo {
-    width: 5rem;
-}
-
-.avatar {
-    display: inline-block;
-    width: 2.4em;
-    text-align: center;
-
-    &--rounded {
-        border-radius: 50%;
-    }
-
-    &--sm {
-        width: 1.4em;
-    }
-}
+@use './scss/reset';
+@use './scss/utils';

@@ -4,7 +4,7 @@
 .video-card__thumbnail {
     display: block;
     width: 100%;
-    margin-bottom: .46em;
+    margin-bottom: .8rem;
 }
 
 .video-card__info {
@@ -12,7 +12,9 @@
 }
 
 .video-card__avatar {
-    margin-right: .8em;
+    width: 2.2rem;
+    margin-right: .8rem;
+    border-radius: 50%;
 }
 
 .video-card__title {
@@ -24,13 +26,13 @@
 .video-card__channel {
     display: inline-block;
     color: rgba(0, 0, 0, .75);
-    font-size: .875em;
+    font-size: .875rem;
 }
 
 .video-card__views {
     display: inline-block;
     color: rgba(0, 0, 0, .75);
-    font-size: .875em;
+    font-size: .875rem;
 }
 
 .video-card__views::after {
@@ -41,5 +43,5 @@
 .video-card__publish-time {
     display: inline-block;
     color: rgba(0, 0, 0, .75);
-    font-size: .875em;
+    font-size: .875rem;
 }

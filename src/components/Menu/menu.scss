@@ -1,21 +1,21 @@
-@use "../../scss/components/icon.scss";
+@use '../../scss/variables.scss' as *;
 
 .menu {
-    --pl: 1.25rem;
+    --pl: 1.5rem;
 
     color: #030303;
 }
 
 .menu__header {
-    margin-bottom: .42em;
+    margin-bottom: .42rem;
     padding-left: var(--pl);
-    font-size: .95em;
+    font-size: .95rem;
     font-weight: 400;
     text-transform: uppercase;
 }
 
 .menu__block {
-    padding: .75em 0;
+    padding: .75rem 0;
     border-bottom: 2px solid rgba(0, 0, 0, .05);
 }
 
@@ -23,11 +23,11 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 2.6em;
+    height: 2.5rem;
     padding-left: var(--pl);
     border: none;
     background-color: inherit;
-    font-size: .97em;
+    font-size: .875rem;
 
     &:hover {
         background-color: rgba(0, 0, 0, .05);
@@ -39,13 +39,21 @@
 }
 
 .menu__img {
-    @extend .icon;
+    --size: 1.5rem;
 
-    flex: none;
-    width: 1.45em;
-    margin-right: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size);
+    height: var(--size);
+    margin-right: 1.5rem;
+    border-radius: 50%;
     color: #606060;
-    font-size: 1.45em;  // for font-icon
+    font-size: var(--size);  // for font-icon
+
+    &--sm {
+        --size: 1.2rem;
+    }
 }
 
 .menu__link {

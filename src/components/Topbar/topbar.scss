@@ -1,45 +1,48 @@
-@use "../../scss/components/icon.scss";
-
 .topbar {
     display: flex;
     align-items: center;
-    padding: .7em;
+    padding: .75rem 0;
     color: #030303;
 }
 
-.nav__logo {
+.topbar__logo {
+    width: 5rem;
     margin-right: auto;
 }
 
 .topbar__menu_toggle {
-    width: 1.6rem;
-    margin: 0 1rem;
+    width: 1.5rem;
+    margin: 0 1.5rem;
     font-size: 1.6rem;
     text-align: center;
     cursor: pointer;
 }
 
 .topbar__icon {
-    width: 1.6rem;
-    margin-left: .8em;
+    $size: 1.5rem;
+
+    width: $size;
+    margin-left: 1.5rem;
     color: #606060;
-    font-size: 1.6em;
+    font-size: $size;
     cursor: pointer;
 }
 
 .topbar__search {
     flex: auto;
-    max-width: 40em;
-    margin-right: 3.4em;
-    margin-left: 2.8em;
+    max-width: 40rem;
+    margin-right: 3.4rem;
+    margin-left: 2.8rem;
 }
 
 .topbar__user {
-    @extend .icon;
-    @extend .icon--rounded;
+    $size: 2rem;
 
-    width: 1.85em;
-    margin: 0 1.4em 0 2em;
+    display: block;
+    width: $size;
+    height: $size;
+    margin: 0 3.2rem 0 1.8rem;
+    border-radius: 50%;
     cursor: pointer;
 }
 

@@ -7,7 +7,7 @@ export default function Menu() {
             <section className="menu__block">
                 <a href="#" className="menu__item menu__link menu__link--active"><i className="menu__img material-icons">home</i><span className="menu__text">Home</span></a>
                 <a href="#" className="menu__item menu__link"><i className="menu__img material-icons">local_fire_department</i><span className="menu__text">Trending</span></a>
-                <a href="#" className="menu__item menu__link"><i className="menu__img material-icons">subscriptions</i><span className="menu__text">Subscription</span></a>
+                <a href="#" className="menu__item menu__link"><i className="menu__img material-icons">subscriptions</i><span className="menu__text">Subscriptions</span></a>
             </section>
             <section className="menu__block">
                 <a href="#" className="menu__item menu__link"><i className="menu__img material-icons">video_library</i><span className="menu__text">Library</span></a>
@@ -19,8 +19,8 @@ export default function Menu() {
             </section>
             <section className="menu__block">
                 <h3 className="menu__header">SUBSCRIPTIONS</h3>
-                <a href="#" className="menu__item menu__link"><img className="menu__img avatar avatar--rounded avatar--sm" src="https://picsum.photos/51" alt="" /><span className="menu__text">Laravel Business</span></a>
-                <a href="#" className="menu__item menu__link"><img className="menu__img avatar avatar--rounded avatar--sm" src="https://picsum.photos/49" alt="" /><span className="menu__text">Flux</span></a>
+                <a href="#" className="menu__item menu__link"><img className="menu__img" src="https://picsum.photos/51" alt="" /><span className="menu__text">Laravel Business</span></a>
+                <a href="#" className="menu__item menu__link"><img className="menu__img" src="https://picsum.photos/49" alt="" /><span className="menu__text">Flux</span></a>
             </section>
             <section className="menu__block">
                 <h3 className="menu__header">More From YouTube</h3>

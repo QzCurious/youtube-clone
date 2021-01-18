@@ -7,7 +7,7 @@ export default function index() {
     return (
         <div className="topbar">
             <i className="topbar__menu_toggle material-icons">menu</i>
-            <img className="nav__logo logo" src={logo} alt="logo" />
+            <img className="topbar__logo logo" src={logo} alt="logo" />
             <div className="topbar__search">
                 <Search></Search>
             </div>

@@ -8,8 +8,8 @@ export default function index() {
                 <img className="video-card__thumbnail" src="https://picsum.photos/360/200" />
             </a>
             <div className="video-card__info">
-                <a href="#" className="video-card__avatar">
-                    <img className="avatar avatar--rounded" src="https://picsum.photos/50" alt="Channel Name" />
+                <a href="#">
+                    <img className="video-card__avatar" src="https://picsum.photos/50" alt="Channel Name" />
                 </a>
                 <div>
                     <h3 className="video-card__title">Lorem ipsum dolor sit Lorem ipsum dolor sit amet,</h3>
