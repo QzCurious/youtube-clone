@@ -4,6 +4,9 @@ import React from 'react'
 export default function Keywords() {
     return (
         <section className="keywords">
+            <span className="keywords__prev-wrapper">
+                <button className="keywords__prev material-icons">navigate_before</button>
+            </span>
             <a href="#" className="keywords__text keywords__text--active">All</a>
             <a href="#" className="keywords__text">Git</a>
             <a href="#" className="keywords__text">Vim</a>
@@ -26,6 +29,9 @@ export default function Keywords() {
             <a href="#" className="keywords__text">MySQL</a>
             <a href="#" className="keywords__text">MongoDB</a>
             <a href="#" className="keywords__text">Redis</a>
+            <span className="keywords__next-wrapper">
+                <button className="keywords__next material-icons">navigate_next</button>
+            </span>
         </section>
     )
 }
