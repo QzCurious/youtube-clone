@@ -71,8 +71,16 @@
     }
 }
 
+.keywords__content {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;  // not support by Safari
+}
+
 .keywords__text {
     display: inline-flex;
+    flex: none;
     align-items: center;
     height: 2rem;
     margin-right: .75rem;

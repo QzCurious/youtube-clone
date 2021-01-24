@@ -28,7 +28,7 @@
 
 .main-layout__keywords {
     grid-area: keywords;
-    overflow-x: hidden;
+    min-width: 0;  // gird turns min-width to auto
 }
 
 .main-layout__main {
