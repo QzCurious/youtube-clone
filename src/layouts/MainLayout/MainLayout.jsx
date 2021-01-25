@@ -1,5 +1,5 @@
 import React from 'react'
-import Keywords from '../../components/Keywords/Keywords'
+import Filters from '../../components/Filters/Filters'
 import Menu from '../../components/Menu/Menu'
 import Topbar from '../../components/Topbar/Topbar'
 import VideoCardGrid from '../../components/VideoCard/VideoCardGrid'
@@ -15,8 +15,8 @@ export default function MainLayout() {
             <nav className="main-layout__menu">
                 <Menu></Menu>
             </nav>
-            <section className="main-layout__keywords">
-                <Keywords></Keywords>
+            <section className="main-layout__filters">
+                <Filters></Filters>
             </section>
             <main className="main-layout__main">
                 <VideoCardGrid></VideoCardGrid>

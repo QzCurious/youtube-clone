@@ -1,7 +1,6 @@
 @use '../../scss/variables.scss' as *;
 
-.keywords {
-    --px: .75rem;
+.filters {
     --bgc: 255, 255, 255;
 
     display: flex;
@@ -15,8 +14,8 @@
     font-size: .875rem;
 }
 
-.keywords__prev-wrapper,
-.keywords__next-wrapper {
+.filters__prev-wrapper,
+.filters__next-wrapper {
     position: absolute;
     padding: inherit;
     background-color: inherit;
@@ -30,7 +29,7 @@
     }
 }
 
-.keywords__next-wrapper {
+.filters__next-wrapper {
     right: 0;
 
     &::after {
@@ -40,7 +39,7 @@
     }
 }
 
-.keywords__prev-wrapper {
+.filters__prev-wrapper {
     left: 0;
 
     &::after {
@@ -50,8 +49,8 @@
     }
 }
 
-.keywords__prev,
-.keywords__next {
+.filters__prev,
+.filters__next {
     $size: 1rem;
 
     display: block;
@@ -71,14 +70,14 @@
     }
 }
 
-.keywords__content {
+.filters__content {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
     scroll-behavior: smooth;  // not support by Safari
 }
 
-.keywords__text {
+.filters__text {
     display: inline-flex;
     flex: none;
     align-items: center;
