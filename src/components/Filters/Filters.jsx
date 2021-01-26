@@ -4,13 +4,25 @@ import { clamp } from '../../js/Utils'
 
 export default function Filters() {
     const [scrollLeft, setScrollLeft] = useState(0)
+    // maxOffset should be updated when the size of filters changes
+    const [maxOffset, setMaxOffset] = useState(0)
     const $content = useRef(null)
+
+    const updateMaxOffset = () => {
+        setMaxOffset($content.current.scrollWidth - $content.current.clientWidth)
+    }
 
     const scroll = (step) => {
         const offset = step * $content.current.clientWidth / 2
-        const maxOffset = $content.current.scrollWidth - $content.current.clientWidth
         setScrollLeft(prevScrollLeft => clamp(0, prevScrollLeft + offset, maxOffset))
     }
+
+    useEffect(() => {
+        updateMaxOffset()
+        window.addEventListener('resize', updateMaxOffset)
+        return () => window.removeEventListener('resize', updateMaxOffset)
+    }, [])
+
 
     useEffect(() => {
         $content.current.scrollLeft = scrollLeft
@@ -18,7 +30,7 @@ export default function Filters() {
 
     return (
         <section className="filters">
-            <Prev onClick={() => scroll(-1)} />
+            { scrollLeft !== 0 ? <Prev onClick={() => scroll(-1)} /> : null}
             <div ref={$content} className="filters__content">
                 <button className="filters__text filters__text--active">All</button>
                 <button className="filters__text">Git</button>
@@ -48,7 +60,7 @@ export default function Filters() {
                 <button className="filters__text">MongoDB</button>
                 <button className="filters__text">Redis</button>
             </div>
-            <Next onClick={() => scroll(1)} />
+            { scrollLeft !== maxOffset ? <Next onClick={() => scroll(1)} /> : null}
         </section>
     )
 }
