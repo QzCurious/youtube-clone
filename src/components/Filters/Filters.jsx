@@ -1,8 +1,40 @@
 import './filters.scss'
 import { useRef, useState, useEffect } from "react";
 import { clamp } from '../../js/Utils'
+import classNames from 'classnames'
+
+const api_data = [
+    { text: "All", active: true },
+    { text: "Git", active: false },
+    { text: "Gitflow", active: false },
+    { text: "React", active: false },
+    { text: "Svelte", active: false },
+    { text: "Vue", active: false },
+    { text: "Sass/SCSS", active: false },
+    { text: "Regex", active: false },
+    { text: "Webpack", active: false },
+    { text: "RESTful", active: false },
+    { text: "OAuth", active: false },
+    { text: "Vim", active: false },
+    { text: "Tmux", active: false },
+    { text: "Markdown", active: false },
+    { text: "Postman", active: false },
+    { text: "Linux", active: false },
+    { text: "Design Pattern", active: false },
+    { text: "Docker", active: false },
+    { text: "Flask", active: false },
+    { text: "Laravel", active: false },
+    { text: "Node.js", active: false },
+    { text: "JavaScript", active: false },
+    { text: "PHP", active: false },
+    { text: "Python", active: false },
+    { text: "MySQL", active: false },
+    { text: "MongoDB", active: false },
+    { text: "Redis", active: false },
+]
 
 export default function Filters() {
+    const [data, setData] = useState([])
     const [scrollLeft, setScrollLeft] = useState(0)
     // maxOffset should be updated when the size of filters changes
     const [maxOffset, setMaxOffset] = useState(0)
@@ -17,8 +49,15 @@ export default function Filters() {
         setScrollLeft(prevScrollLeft => clamp(0, prevScrollLeft + offset, maxOffset))
     }
 
+    const avtivateFilter = (text) => {
+        setData(data.map(data => ({
+            ...data,
+            active: data.text === text
+        })))
+    }
+
     useEffect(() => {
-        updateMaxOffset()
+        setData(api_data)
         window.addEventListener('resize', updateMaxOffset)
         return () => window.removeEventListener('resize', updateMaxOffset)
     }, [])
@@ -28,37 +67,19 @@ export default function Filters() {
         $content.current.scrollLeft = scrollLeft
     }, [scrollLeft])
 
+    useEffect(() => {
+        // Filters is once empty as it mounted.
+        // Each filter is then filled in after `data` updated.
+        updateMaxOffset()
+    }, [data])
+
     return (
         <section className="filters">
             { scrollLeft !== 0 ? <Prev onClick={() => scroll(-1)} /> : null}
             <div ref={$content} className="filters__content">
-                <button className="filters__text filters__text--active">All</button>
-                <button className="filters__text">Git</button>
-                <button className="filters__text">Gitflow</button>
-                <button className="filters__text">React</button>
-                <button className="filters__text">Svelte</button>
-                <button className="filters__text">Vue</button>
-                <button className="filters__text">Sass/SCSS</button>
-                <button className="filters__text">Regex</button>
-                <button className="filters__text">Webpack</button>
-                <button className="filters__text">RESTful</button>
-                <button className="filters__text">OAuth</button>
-                <button className="filters__text">Vim</button>
-                <button className="filters__text">Tmux</button>
-                <button className="filters__text">Markdown</button>
-                <button className="filters__text">Postman</button>
-                <button className="filters__text">Linux</button>
-                <button className="filters__text">Design Pattern</button>
-                <button className="filters__text">Docker</button>
-                <button className="filters__text">Flask</button>
-                <button className="filters__text">Laravel</button>
-                <button className="filters__text">Node.js</button>
-                <button className="filters__text">JavaScript</button>
-                <button className="filters__text">PHP</button>
-                <button className="filters__text">Python</button>
-                <button className="filters__text">MySQL</button>
-                <button className="filters__text">MongoDB</button>
-                <button className="filters__text">Redis</button>
+                {data.map(({ active, text }) => {
+                    return <Filter {...{ key: text, active, text }} onClick={avtivateFilter} />
+                })}
             </div>
             { scrollLeft !== maxOffset ? <Next onClick={() => scroll(1)} /> : null}
         </section>
@@ -84,5 +105,15 @@ function Next({ onClick }) {
                 onClick={onClick}
             >navigate_next</button>
         </div>
+    )
+}
+
+function Filter(props) {
+    const { active, text, onClick } = props
+    return (
+        <button
+            className={classNames('filters__text', { 'filters__text--active': active })}
+            onClick={() => onClick(text)}
+        >{text}</button>
     )
 }
