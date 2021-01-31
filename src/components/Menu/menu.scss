@@ -16,7 +16,10 @@
 
 .menu__block {
     padding: .75rem 0;
-    border-bottom: 2px solid rgba(0, 0, 0, .05);
+}
+
+.menu__divider {
+    border: 1px solid rgba(0, 0, 0, .05);
 }
 
 .menu__item {
@@ -47,7 +50,6 @@
     width: var(--size);
     height: var(--size);
     margin-right: 1.5rem;
-    border-radius: 50%;
     color: #606060;
     font-size: var(--size);  // for font-icon
 
