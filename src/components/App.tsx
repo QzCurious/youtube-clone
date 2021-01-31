@@ -1,4 +1,4 @@
-import MainLayout from '../layouts/MainLayout/MainLayout.jsx';
+import MainLayout from '../layouts/MainLayout/MainLayout';
 import './App.scss';
 
 function App() {
