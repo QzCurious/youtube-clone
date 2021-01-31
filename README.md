@@ -8,6 +8,11 @@ for sass, install `sass`
 npm start
 ```
 
+# TypeScript
+[Integrate](https://create-react-app.dev/docs/adding-typescript/) TypeScript with create-react-app
+
+`npm install --save @types/classnames`
+
 # Coding Style
 
 ## SCSS
