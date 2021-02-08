@@ -21,6 +21,10 @@ npm start
 
 ### Why not `&__elem` for BEM with scss
 
+NOTICE: It separates the scope of SCSS variables. That is,
+sacrifice the ability to share the same variables between
+a block and its elements.
+
 Why not, for example:
 
 ```scss
