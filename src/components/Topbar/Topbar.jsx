@@ -1,21 +1,23 @@
 import React from 'react'
-import logo from "../../assets/images/logo.png"
+import Logo from '../Logo/Logo'
 import Search from '../Search/Search'
 import './topbar.scss'
 
 export default function index() {
     return (
         <div className="topbar">
-            <i className="topbar__menu_toggle material-icons">menu</i>
-            <img className="topbar__logo logo" src={logo} alt="logo" />
+            <button className="topbar__menu_toggle material-icons">menu</button>
+            <div className="topbar__logo"><Logo /></div>
             <div className="topbar__search">
                 <Search></Search>
             </div>
             <div className="topbar__tooltray">
-                <a className="topbar__icon material-icons" title="create">video_call</a>
-                <a className="topbar__icon material-icons" title="YouTube apps">apps</a>
-                <a className="topbar__icon material-icons" title="notifications">notifications</a>
-                <a title="user profile"><img className="topbar__user" src="https://picsum.photos/52" /></a>
+                <button className="topbar__btn material-icons" title="create">video_call</button>
+                <button className="topbar__btn material-icons" title="YouTube apps">apps</button>
+                <button className="topbar__btn material-icons" title="notifications">notifications</button>
+                <button className="topbar__user" title="user profile">
+                    <img className="topbar__avatar" src="https://picsum.photos/52" />
+                </button>
             </div>
         </div>
     )

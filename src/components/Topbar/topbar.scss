@@ -1,8 +1,11 @@
+@use '../../scss/variables.scss' as *;
+
 .topbar {
+    --color: #606060;
+
     display: flex;
     align-items: center;
     padding: .75rem 0;
-    color: #030303;
 }
 
 .topbar__logo {
@@ -11,19 +14,26 @@
 }
 
 .topbar__menu_toggle {
-    width: 1.5rem;
+    $size: 1.5rem;
+
+    width: $size;
     margin: 0 1.5rem;
-    font-size: 1.6rem;
+    border: none;
+    background-color: inherit;
+    color: var(--color);
+    font-size: $size;
     text-align: center;
     cursor: pointer;
 }
 
-.topbar__icon {
+.topbar__btn {
     $size: 1.5rem;
 
     width: $size;
     margin-left: 1.5rem;
-    color: #606060;
+    border: none;
+    background-color: inherit;
+    color: var(--color);
     font-size: $size;
     cursor: pointer;
 }
@@ -31,19 +41,24 @@
 .topbar__search {
     flex: auto;
     max-width: 40rem;
-    margin-right: 3.4rem;
-    margin-left: 2.8rem;
+    margin: 0 2.8rem;
 }
 
 .topbar__user {
     $size: 2rem;
 
-    display: block;
     width: $size;
     height: $size;
-    margin: 0 3.2rem 0 1.8rem;
-    border-radius: 50%;
+    margin: 0 1.8rem 0 1.8rem;
+    border: none;
+    background-color: inherit;
     cursor: pointer;
+}
+
+.topbar__avatar {
+    display: block;
+    max-width: 100%;
+    border-radius: 50%;
 }
 
 .topbar__tooltray {
