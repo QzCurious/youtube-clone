@@ -3,10 +3,14 @@ import Logo from '../Logo/Logo'
 import Search from '../Search/Search'
 import './topbar.scss'
 
-export default function index() {
+interface Props {
+    onMenuToggleClick: () => void
+}
+
+export default function index({ onMenuToggleClick }: Props) {
     return (
         <div className="topbar">
-            <button className="topbar__menu_toggle material-icons">menu</button>
+            <button className="topbar__menu_toggle material-icons" onClick={onMenuToggleClick}>menu</button>
             <div className="topbar__logo"><Logo /></div>
             <div className="topbar__search">
                 <Search></Search>

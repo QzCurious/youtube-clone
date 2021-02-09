@@ -5,7 +5,7 @@
         "topbar topbar"
         "menu filters"
         "menu main";
-    grid-template-columns: 15rem 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto auto 1fr;
     height: 100vh;
 }
