@@ -13,6 +13,8 @@ npm start
 
 `npm install --save @types/classnames`
 
+`npm install --save @types/resize-observer-browser`
+
 # Coding Style
 
 ## SCSS
