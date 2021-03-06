@@ -1,15 +1,27 @@
 @use '../../scss/variables.scss' as *;
 
 .menu {
-    --pl: 1.5rem;
+    --bgc: rgb(255, 255, 255);
+    --bgc-active: rgba(0, 0, 0, .1);
+    --bgc-complement: rgba(0, 0, 0, .05);
+    --px: 1.5rem;
 
     width: 15rem;
+    background-color: var(--bgc);
     color: #030303;
+
+    &--with-border {
+        border: 1px solid var(--bgc-active);
+    }
+
+    &--sm {
+        width: 12rem;
+    }
 }
 
 .menu__header {
     margin-bottom: .42rem;
-    padding-left: var(--pl);
+    padding: 0 var(--px);
     font-size: .95rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -20,7 +32,7 @@
 }
 
 .menu__divider {
-    border: 1px solid rgba(0, 0, 0, .05);
+    border: 1px solid var(--bgc-complement);
 }
 
 .menu__item {
@@ -28,13 +40,13 @@
     align-items: center;
     width: 100%;
     height: 2.5rem;
-    padding-left: var(--pl);
+    padding: 0 var(--px);
     border: none;
     background-color: inherit;
     font-size: .875rem;
 
     &:hover {
-        background-color: rgba(0, 0, 0, .05);
+        background-color: var(--bgc-complement);
     }
 
     &:active {
@@ -63,7 +75,7 @@
     cursor: pointer;
 
     &--active {
-        background-color: rgba(0, 0, 0, .1);
+        background-color: var(--bgc-active);
         font-weight: 500;
 
         & .menu__img {
