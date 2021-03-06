@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../Logo/Logo'
 import Search from '../Search/Search'
+import CreateBtn from './CreateBtn'
 import './topbar.scss'
 
 interface Props {
@@ -16,7 +17,7 @@ export default function index({ onMenuToggleClick }: Props) {
                 <Search></Search>
             </div>
             <div className="topbar__tooltray">
-                <button className="topbar__btn material-icons" title="create">video_call</button>
+                <CreateBtn/>
                 <button className="topbar__btn material-icons" title="YouTube apps">apps</button>
                 <button className="topbar__btn material-icons" title="notifications">notifications</button>
                 <button className="topbar__user" title="user profile">
