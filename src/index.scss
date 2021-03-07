@@ -1,3 +1,7 @@
 @use './scss/variables.scss';
 @use './scss/reset';
 @use './scss/utils';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
