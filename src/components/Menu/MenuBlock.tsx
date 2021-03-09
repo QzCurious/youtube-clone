@@ -4,7 +4,7 @@ interface Props {
 
 export default function MenuBlock({ children }: Props) {
     return (
-        <section className="menu__block">
+        <section className="py-3">
             {children}
         </section>
     )
