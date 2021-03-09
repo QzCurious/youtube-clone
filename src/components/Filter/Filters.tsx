@@ -1,7 +1,7 @@
-import './filters.scss'
 import { useRef, useState, useEffect } from "react";
+import Filter from './Filter'
 import { clamp } from '../../js/Utils'
-import classNames from 'classnames'
+import classNames from "classnames";
 
 interface T_Filter {
     text: string,
@@ -78,9 +78,9 @@ export default function Filters() {
     }, [data])
 
     return (
-        <section className="filters">
+        <section className="relative bg-white flex items-center h-14 px-4 border-t border-b border-solid">
             { scrollLeft !== 0 ? <Prev onClick={() => scroll(-1)} /> : null}
-            <div ref={content} className="filters__content">
+            <div ref={content} className="flex flex-nowrap overflow-x-hidden" style={{ scrollBehavior: 'smooth' }}>
                 {data.map(({ text, active }) => {
                     return <Filter key={text} text={text} onClick={avtivateFilter} active={active} />
                 })}
@@ -92,38 +92,36 @@ export default function Filters() {
 
 function Prev({ onClick }: { onClick: () => void }) {
     return (
-        <div className="filters__prev-wrapper">
-            <button
-                className="filters__prev material-icons"
-                onClick={onClick}
-            >navigate_before</button>
+        <div className="h-full absolute left-0 flex items-center">
+            <div className="h-full w-14 bg-white flex items-center justify-center">
+                <button
+                    className={classNames(
+                        "material-icons",
+                        "rounded-full text-base w-8 h-8",
+                        "active:bg-gray-300 transition-colors"
+                    )}
+                    onClick={onClick}
+                >navigate_before</button>
+            </div>
+            <div className="w-12 h-full bg-gradient-to-l from-transparent to-white"></div>
         </div>
     )
 }
 
 function Next({ onClick }: { onClick: () => void }) {
     return (
-        <div className="filters__next-wrapper">
-            <button
-                className="filters__next material-icons"
-                onClick={onClick}
-            >navigate_next</button>
+        <div className="h-full absolute right-0 flex items-center">
+            <div className="w-12 h-full bg-gradient-to-r from-transparent to-white"></div>
+            <div className="h-full w-14 bg-white flex items-center justify-center">
+                <button
+                    className={classNames(
+                        "material-icons",
+                        "rounded-full text-base w-8 h-8",
+                        "active:bg-gray-300 transition-colors"
+                    )}
+                    onClick={onClick}
+                >navigate_next</button>
+            </div>
         </div>
-    )
-}
-
-interface T_FilterProps {
-    text: string,
-    active?: boolean,
-    onClick: (text: string) => void
-}
-
-function Filter(props: T_FilterProps) {
-    const { active = false, text, onClick } = props
-    return (
-        <button
-            className={classNames('filters__text', { 'filters__text--active': active })}
-            onClick={() => onClick(text)}
-        >{text}</button>
     )
 }
