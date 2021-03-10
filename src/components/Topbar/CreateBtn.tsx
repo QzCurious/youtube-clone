@@ -1,7 +1,6 @@
+import classNames from 'classnames'
 import Dropdown from '../Dropdown/Dropdown';
-import MenuBlock from '../Menu/MenuBlock';
-import MenuLink from '../Menu/MenuLink';
-import '../Menu/menu.scss'
+import styles from '../Menu/menu.module.scss'
 
 export default function CreateBtn() {
     return (
@@ -9,11 +8,11 @@ export default function CreateBtn() {
             className="topbar__btn"
             btn={<div className="material-icons" style={{ display: 'block' }}>video_call</div>}
         >
-            <div className="menu menu--with-border menu--sm">
-                <MenuBlock>
-                    <MenuLink img={<i className="material-icons">ondemand_video</i>} title="Upload video" href="/upload-video" />
-                    <MenuLink img={<i className="material-icons">podcasts</i>} title="Go live" href="/go-live" />
-                </MenuBlock>
+            <div className="w-48 bg-white border border-black border-opacity-10">
+                <div className={styles.block}>
+                    <a className={styles.item} href="/upload-video"><i className={classNames(styles.fontIcon, "material-icons")}>ondemand_video</i>Upload video</a>
+                    <a className={styles.item} href="/go-live"><i className={classNames(styles.fontIcon, "material-icons")}>podcasts</i>Go live</a>
+                </div>
             </div>
         </Dropdown>
     )
