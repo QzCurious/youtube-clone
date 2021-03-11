@@ -45,9 +45,13 @@ I came up with three solutions:
 
 With `@apply`, I can have a consistent css component which made up in
 a defined way (ruleset by tailwindcss). When it comes to **adjustments**,
-I can **override** the spacing by utility classes with ease. To have the
+I can **override** the spacing by utility classes with ease. ~~To have the
 **override** happen, the css component should be `@layer`-ed befor
-`@tailwind utilities;`
+`@tailwind utilities;`~~
+
+For unknown reason, utility classes not overriding css components as
+described in last paragraph. A simple solution is importing `<App />` before `@tailwindcss` directives. This effectively order the css that imported by
+`.js` before tailwindcss (and `@layer` is not needed anymore).
 
 # Coding Style
 
