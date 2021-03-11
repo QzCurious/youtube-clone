@@ -1,14 +1,13 @@
-import React from 'react'
-import CompactMenuLink from '../CompactMenu/CompactMenuLink'
-import './compact-menu.scss'
+import classNames from 'classnames'
+import styles from './compact-menu.module.scss'
 
 export default function CompactMenu() {
     return (
-        <div className="compact-menu">
-            <CompactMenuLink img={<i className="material-icons">home</i>} title="Home" href="/" active />
-            <CompactMenuLink img={<i className="material-icons">local_fire_department</i>} title="Trending" href="/trending" />
-            <CompactMenuLink img={<i className="material-icons">subscriptions</i>} title="Subscriptions" href="/subscriptions" />
-            <CompactMenuLink img={<i className="material-icons">video_library</i>} title="Library" href="/library" />
+        <div className="w-18">
+            <a href="/" className={classNames(styles.item, styles.active)}><i className={classNames(styles.fontIcon, "material-icons")}>home</i>Home</a>
+            <a href="/trending" className={styles.item}><i className={classNames(styles.fontIcon, "material-icons")}>local_fire_department</i>Trending</a>
+            <a href="/subscriptions" className={styles.item}><i className={classNames(styles.fontIcon, "material-icons")}>subscriptions</i>Subscriptions</a>
+            <a href="/library" className={styles.item}><i className={classNames(styles.fontIcon, "material-icons")}>video_library</i>Library</a>
         </div>
     )
 }

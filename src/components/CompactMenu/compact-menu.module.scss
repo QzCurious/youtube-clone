@@ -1,0 +1,22 @@
+@layer components {
+    .item {
+        @apply flex flex-col justify-center items-center
+            font-medium text-black text-opacity-95 text-2xs
+            w-full h-18 border-none bg-white
+            hover:bg-black hover:bg-opacity-5;
+
+        &.active .fontIcon {
+            @apply text-red-0;
+        }
+    }
+
+    .icon {
+        @apply w-6 h-6 mb-2;
+    }
+
+    .fontIcon {
+        composes: icon;
+
+        @apply text-2xl text-black text-opacity-60;
+    }
+}
