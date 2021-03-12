@@ -1,8 +1,9 @@
 import React from 'react'
-import Logo from '../Logo/Logo'
 import Search from '../Search/Search'
 import CreateBtn from './CreateBtn'
-import './topbar.scss'
+import logo from "../../assets/images/logo.png"
+import styles from './topbar.module.scss'
+import classNames from 'classnames'
 
 interface Props {
     onMenuToggleClick: () => void
@@ -10,19 +11,17 @@ interface Props {
 
 export default function index({ onMenuToggleClick }: Props) {
     return (
-        <div className="topbar">
-            <button className="topbar__menu_toggle material-icons" onClick={onMenuToggleClick}>menu</button>
-            <div className="topbar__logo"><Logo /></div>
-            <div className="topbar__search">
+        <div className="flex items-center h-14">
+            <button className={classNames("material-icons mx-6", styles.fontIcon)} onClick={onMenuToggleClick}>menu</button>
+            <a href="/"><img className="block max-h-5" src={logo} alt="logo" /></a>
+            <div className="flex-auto max-w-2xl px-11 mx-auto">
                 <Search></Search>
             </div>
-            <div className="topbar__tooltray">
-                <CreateBtn/>
-                <button className="topbar__btn material-icons" title="YouTube apps">apps</button>
-                <button className="topbar__btn material-icons" title="notifications">notifications</button>
-                <button className="topbar__user" title="user profile">
-                    <img className="topbar__avatar" src="https://picsum.photos/52" />
-                </button>
+            <div className="flex items-center">
+                <CreateBtn />
+                <button className={classNames("material-icons", styles.fontIcon)} title="YouTube apps">apps</button>
+                <button className={classNames("material-icons", styles.fontIcon)} title="notifications">notifications</button>
+                <img className="w-8 h-8 rounded-full ml-4 mr-7 cursor-pointer" src="https://picsum.photos/52" alt="avatar" />
             </div>
         </div>
     )

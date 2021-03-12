@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Filters from '../../components/Filters/Filters'
+import Filters from '../../components/Filter/Filters'
 import Menu from '../../components/Menu/Menu'
 import CompactMenu from '../../components/CompactMenu/CompactMenu'
 import Topbar from '../../components/Topbar/Topbar'
