@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import CSS from "csstype";
+import { useClickAway } from 'react-use';
 
 type At = 'top' | 'right' | 'bottom' | 'left'
 
@@ -8,6 +9,7 @@ interface Props {
     children: React.ReactNode,
     position?: At,
     align?: At,
+    autoClose?: boolean,
     [keys: string]: any
 }
 
@@ -16,21 +18,25 @@ export default function Dropdown({
     children,
     position = 'bottom',
     align = 'left',
+    autoClose = true,
     ...keys
 }: Props) {
     const [show, setShow] = useState(false)
-    function onClick() {
-        setShow(!show)
-    }
 
     return (
         <div
             {...keys}
             style={{ ...keys['style'], position: 'relative' }}
-            onClick={onClick}
         >
-            {btn}
-            {show && <DropdownMenu position={position} align={align}>{children}</DropdownMenu>}
+            <div onClick={!show ? () => setShow(true) : undefined}>{btn}</div>
+            {
+                show &&
+                <DropdownMenu
+                    position={position}
+                    align={align}
+                    onClickAway={() => autoClose && setShow(false)}
+                >{children}</DropdownMenu>
+            }
         </div>
     )
 }
@@ -39,6 +45,7 @@ interface DropdownMenuProps {
     children: React.ReactNode,
     position: At,
     align: At,
+    onClickAway: () => void
 }
 
 function DropdownMenu(props: DropdownMenuProps) {
@@ -46,6 +53,8 @@ function DropdownMenu(props: DropdownMenuProps) {
     const [align, setAlign] = useState(props.align)
     const [preparing, setPreparing] = useState(true)
     const wrapper = useRef<HTMLDivElement>(null!)
+
+    useClickAway(wrapper, props.onClickAway, ['click'])
 
     useEffect(() => {
         const parentRect = wrapper.current.offsetParent!.getBoundingClientRect()
