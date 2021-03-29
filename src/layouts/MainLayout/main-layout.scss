@@ -19,11 +19,6 @@
 .main-layout__menu {
     position: relative;
     grid-area: menu;
-    overflow: hidden;
-
-    &:hover {
-        overflow-y: auto;
-    }
 }
 
 .main-layout__filters {

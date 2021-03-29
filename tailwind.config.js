@@ -7,12 +7,16 @@ module.exports = {
       spacing: { 18: '4.5rem' },
       fontSize: {
         '2xs': ['0.625rem'],
+      },
+      transitionProperty: {
+        visibility: "visibility"
       }
     },
   },
   variants: {
     extend: {
-      backgroundColor: ['active']
+      backgroundColor: ['active'],
+      overflow: ['hover']
     },
   },
   plugins: [],

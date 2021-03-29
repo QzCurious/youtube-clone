@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 export default function Menu() {
     return (
-        <div className="w-60">
+        <div className="w-60 bg-white">
             <div className={styles.block}>
                 <a href="/" className={classNames(styles.item, styles.active)}><i className={classNames(styles.fontIcon, "material-icons")}>home</i>Home</a>
                 <a href="/trending" className={styles.item}><i className={classNames(styles.fontIcon, "material-icons")}>local_fire_department</i>Trending</a>
