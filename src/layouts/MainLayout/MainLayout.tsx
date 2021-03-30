@@ -1,15 +1,17 @@
 import { useEffect } from 'react'
-import { useMedia, useToggle } from 'react-use'
+import { useToggle } from 'react-use'
 import Filters from '../../components/Filter/Filters'
 import Menu from '../../components/Menu/Menu'
 import FloatingMenu from '../../components/Menu/FloatingMenu'
 import CompactMenu from '../../components/CompactMenu/CompactMenu'
 import Topbar from '../../components/Topbar/Topbar'
 import VideoCardGrid from '../../components/VideoCard/VideoCardGrid'
+import useBreakpoint from './breakpoints'
 import './main-layout.scss'
 
 export default function MainLayout() {
-    const XL = useMedia('(min-width: 1324px)')
+    const XL = useBreakpoint('XL')
+    const LG = useBreakpoint('LG')
 
     const [isCompactMenu, toggleIsCompactMenu] = useToggle(false)
     const [isFloatingMenu, toggleIsFloatingMenu] = useToggle(false)
@@ -17,7 +19,7 @@ export default function MainLayout() {
     useEffect(() => {
         toggleIsCompactMenu(!XL)
         toggleIsFloatingMenu(false)
-    }, [XL])
+    }, [XL, toggleIsCompactMenu, toggleIsFloatingMenu])
 
     return (
         <div className="main-layout">
@@ -27,7 +29,7 @@ export default function MainLayout() {
             <nav className="main-layout__menu">
                 <div className="h-full overflow-hidden hover:overflow-y-auto">
                     {XL && (isCompactMenu ? <CompactMenu /> : <Menu />)}
-                    {!XL && <CompactMenu />}
+                    {LG && !XL && <CompactMenu />}
                 </div>
             </nav>
             <section className="main-layout__filters">
