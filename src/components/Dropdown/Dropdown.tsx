@@ -5,12 +5,13 @@ import { useClickAway } from 'react-use';
 type At = 'top' | 'right' | 'bottom' | 'left'
 
 interface Props {
-    btn: React.ReactNode,
+    btn: ({ onClick }: { onClick: () => void }) => JSX.Element,
     children: React.ReactNode,
     position?: At,
     align?: At,
     autoClose?: boolean,
-    [keys: string]: any
+    className?: string,
+    style?: React.CSSProperties
 }
 
 export default function Dropdown({
@@ -19,16 +20,17 @@ export default function Dropdown({
     position = 'bottom',
     align = 'left',
     autoClose = true,
-    ...keys
+    className,
+    style
 }: Props) {
     const [show, setShow] = useState(false)
 
     return (
         <div
-            {...keys}
-            style={{ ...keys['style'], position: 'relative' }}
+            className={className}
+            style={{ position: 'relative', ...style }}
         >
-            <div onClick={!show ? () => setShow(true) : undefined}>{btn}</div>
+            { btn({ onClick: () => !show ? setShow(true) : undefined })}
             {
                 show &&
                 <DropdownMenu

@@ -5,7 +5,12 @@ import topbar from '../Topbar/topbar.module.scss'
 
 export default function CreateBtn() {
     return (
-        <Dropdown btn={<button className={classNames("material-icons", topbar.fontIcon)}>video_call</button>}>
+        <Dropdown btn={({ onClick }) =>
+            <button
+                onClick={onClick}
+                className={classNames("material-icons", topbar.fontIcon)}
+            >video_call</button>
+        }>
             <div className="w-44 bg-white border border-black border-opacity-10">
                 <div className={menu.block}>
                     <a className={classNames(menu.item, "px-4")} href="/upload-video"><i className={classNames(menu.fontIcon, "material-icons mr-4")}>ondemand_video</i>Upload video</a>
