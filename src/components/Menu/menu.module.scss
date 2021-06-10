@@ -24,7 +24,7 @@
     }
 
     .divider {
-        @apply border border-black border-opacity-5;
+        @apply h-0 border-t border-black border-opacity-5;
     }
 
     .icon {

@@ -6,6 +6,7 @@ import styles from './topbar.module.scss'
 import cx from 'classnames'
 import useBreakpoint from '../../layouts/MainLayout/breakpoints'
 import { useClickAway, useToggle } from 'react-use'
+import NotificationBtn from './Notification/NotificationBtn'
 
 interface Props {
     onMenuToggleClick: () => void
@@ -61,7 +62,7 @@ export default function Index({ onMenuToggleClick }: Props) {
                     }
                     <CreateBtn />
                     <button className={cx("material-icons", styles.fontIcon)} title="YouTube apps">apps</button>
-                    {SM && <button className={cx("material-icons", styles.fontIcon)} title="notifications">notifications</button>}
+                    {SM && <NotificationBtn />}
                 </div>
                 <img className="w-8 h-8 rounded-full mx-7 cursor-pointer" src="https://picsum.photos/52" alt="avatar" />
             </div>
